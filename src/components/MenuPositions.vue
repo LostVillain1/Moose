@@ -2,7 +2,7 @@
     <div class="pos-container" @click="checkComp">
         <div v-for="(item, index) in getAllPositions" :key="index" @click="console.log(item.photo)">
             <p>{{item.name}}</p>
-            <img :src='getSrc(item.photo)'>
+            <img :src='item.photo'>
         </div>
     </div>
 </template>
@@ -13,7 +13,7 @@ import { mapGetters } from 'vuex';
 export default {
     name: 'MenuPositions',
     computed: {
-        ...mapGetters(['getAllPositions'])
+        ...mapGetters(['getAllPositions']),
     },
     methods: {
         checkComp() {
