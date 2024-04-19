@@ -5,17 +5,16 @@ export const store = createStore({
     positions: [
       {
           name: 'SloobCheese',
-          photo: '@/assets/first.jpg'
+          photo: require('@/assets/Sloob.jpg')
       },
       {
           name: 'Los Pollos',
-          photo: '@/assets/second.jpg'
+          photo: require('@/assets/LosPollos.jpg')
       }
     ],
   },
   getters: {
     getAllPositions(state)  {
-      console.log(state)
       return state.positions
     }
   },
