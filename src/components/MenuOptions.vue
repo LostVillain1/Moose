@@ -18,7 +18,6 @@ export default {
     display: flex;
     justify-content: space-around;
     padding: 30px;
-    height: 20vh;
     font-weight: bold;
     gap: 15px
 }

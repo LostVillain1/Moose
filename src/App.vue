@@ -2,7 +2,7 @@
   <div class="container">
     <menu-header></menu-header>
     <menu-options></menu-options>
-    <menu-positions></menu-positions>
+    <menu-positions></menu-positions> 
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
   components: {
     MenuHeader,
     MenuOptions,
-    MenuPositions
+    MenuPositions,
   }
 }
 </script>
@@ -37,5 +37,9 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  overflow-y: auto; 
 }
 </style>

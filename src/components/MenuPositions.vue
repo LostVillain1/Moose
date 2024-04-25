@@ -1,19 +1,29 @@
 <template>
-    <div class="pos-container" @click="checkComp">
-        <div v-for="(item, index) in getAllPositions" :key="index" class="pos-container_elem">
+    <div class="positions-container" @click="checkComp">
+        <div v-for="(item, index) in getAllPositions" :key="index" class="pos-container_elem" @click="visibleModal = !visibleModal">
             <div class="elem_content">
                 <p>{{item.name}}</p>
                 <img :src='item.photo' class='pos-image'>
-            </div>            
+            </div>
+            <menu-position v-if="visibleModal" :photo="item.photo" :name="item.photo"></menu-position>            
         </div>
     </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import MenuPosition from './Position.vue';
 
 export default {
     name: 'MenuPositions',
+    components: {
+        MenuPosition
+    },
+    data() {
+        return {
+            visibleModal: false
+        }
+    },
     computed: {
         ...mapGetters(['getAllPositions']),
     },
@@ -26,12 +36,13 @@ export default {
 </script>
 
 <style>
-    .pos-container {
+    .positions-container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly; 
-        gap: 50px       
+        gap: 50px;
+        overflow-y: auto;  
     }
 
     
